@@ -48,6 +48,7 @@ header {
 
 .card-container {
   display: flex;
+  flex-direction: row;
   gap: 6rem;
 }
 
@@ -87,4 +88,16 @@ header {
   font-weight: 600;
   padding: 1rem;
   margin: 1rem 0;
+}
+
+@media screen and (max-width: 900px) {
+  .card-container {
+    display: block;
+    /* flex-direction: column; */
+    gap: 2rem;
+    margin: 0 5rem;
+  }
+  .card {
+    margin: 1rem;
+  }
 }
