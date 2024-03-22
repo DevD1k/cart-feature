@@ -46,20 +46,45 @@ header {
   color: rgb(36, 164, 227);
 }
 
+.card-container {
+  display: flex;
+  gap: 6rem;
+}
+
+.category {
+  font-size: 2rem;
+}
+
 .card {
-  /* display: flex; */
   border: 1.5px solid rgb(36, 164, 227);
   border-radius: 10px;
-  width: 25%;
-  height: 500px;
-  /* gap: 2rem; */
+  padding: 2rem;
+  flex: 1;
 }
+
 .card-inner-data {
   display: flex;
   flex-direction: column;
 }
-/* .hi {
+
+.card-inner-data .title {
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+.card-inner-data .bottom {
   display: flex;
-  width: auto;
-  gap: 6rem;
-} */
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-inner-data .bottom .cart-btn {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: rgb(36, 164, 227);
+  color: #000;
+  font-weight: 600;
+  padding: 1rem;
+  margin: 1rem 0;
+}

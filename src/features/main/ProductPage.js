@@ -1,6 +1,7 @@
+import { useEffect } from "react";
 import { productData } from "../../api/productData";
 import { addProduct, deleteProduct } from "./ProductPageSlice";
-import { UseSelector, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function ProductPage() {
   const dispatch = useDispatch();
@@ -8,17 +9,20 @@ export default function ProductPage() {
 
   function handleAddProduct(product) {
     dispatch(addProduct(product));
-    setTimeout(() => {
-      console.log("Product Added:", cart);
-    }, 500);
+    // console.log("Product Added:", cart);
   }
 
   function handleDeleteProduct(product) {
     dispatch(deleteProduct(product));
-    setTimeout(() => {
-      console.log("Product Removed:", cart);
-    }, 500);
+    // console.log("Product Removed:", cart);
   }
+
+  useEffect(
+    function () {
+      console.log("Updated Cart: ", cart);
+    },
+    [cart]
+  );
 
   return (
     <main>
@@ -26,7 +30,7 @@ export default function ProductPage() {
         return (
           <div className="category" key={category.name}>
             <h2>{category.name}</h2>
-            <div className="hi">
+            <div className="card-container">
               {category.productList.map((product) => {
                 return (
                   <div className="card" key={product.name}>
